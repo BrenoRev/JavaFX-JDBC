@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import model.dao.DepartmentDao;
@@ -24,17 +25,25 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
     @Override
     public void insert(Department obj) {
-       PreparedStatement st = null;
+        PreparedStatement st = null;
         try {
             st = conn.prepareStatement(
                     "INSERT INTO department (Name) "
-                    + "values (?)");
+                    + "VALUES (?)", Statement.RETURN_GENERATED_KEYS);
             st.setString(1, obj.getName());
             int rowsAffected = st.executeUpdate();
             st.executeUpdate();
-            if (rowsAffected == 0) {
+            if (rowsAffected > 0) {
+
+                ResultSet rs = st.getGeneratedKeys();
+                if (rs.next()) {
+                    int id = rs.getInt(1);
+                    obj.setId(id);
+                }
+            } else {
                 throw new DbException("Unexpected error! No Rows affected!");
             }
+
         } catch (SQLException ex) {
             throw new DbException(ex.getMessage());
         } finally {
@@ -44,8 +53,8 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
     @Override
     public void update(Department obj) {
-       PreparedStatement st = null;
-       
+        PreparedStatement st = null;
+
         try {
             st = conn.prepareStatement(
                     "UPDATE department "
@@ -60,23 +69,23 @@ public class DepartmentDaoJDBC implements DepartmentDao {
             DB.closeStatement(st);
         }
     }
+
     @Override
     public void deleteById(Integer id) {
-       PreparedStatement st = null;
+        PreparedStatement st = null;
         try {
             st = conn.prepareStatement(
                     "DELETE FROM department WHERE id = ?");
             st.setInt(1, id);
             int rows = st.executeUpdate();
-            if ( rows == 0){
+            if (rows == 0) {
                 throw new DbException("ID does not exist!");
             }
             st.executeUpdate();
-           
+
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
-        }
-        finally{
+        } finally {
             DB.closeStatement(st);
         }
     }
@@ -116,8 +125,8 @@ public class DepartmentDaoJDBC implements DepartmentDao {
             rs = st.executeQuery();
             List<Department> depart = new ArrayList<>();
             while (rs.next()) {
-               Department dp = instantiateDepartment(rs);
-               depart.add(dp);
+                Department dp = instantiateDepartment(rs);
+                depart.add(dp);
             }
             return depart;
         } catch (SQLException e) {
