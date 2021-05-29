@@ -11,7 +11,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="194.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.DepartmentFormController">
    <children>
-      <GridPane layoutX="46.0" layoutY="53.0" prefHeight="144.0" prefWidth="470.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <GridPane layoutX="46.0" layoutY="53.0" prefHeight="143.0" prefWidth="510.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="87.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="271.0" />
@@ -35,10 +35,10 @@
             </Label>
             <TextField fx:id="txtId" editable="false" GridPane.columnIndex="1" />
             <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label fx:id="labelerrorName" prefHeight="21.0" prefWidth="104.0" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <font>
-                  <Font size="15.0" />
-               </font>
+            <Label fx:id="labelErrorName" prefHeight="21.0" prefWidth="117.0" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
             </Label>
             <HBox prefHeight="48.0" prefWidth="98.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
