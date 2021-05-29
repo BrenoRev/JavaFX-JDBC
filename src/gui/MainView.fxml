@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -29,6 +33,44 @@
                   <Insets />
                </VBox.margin>
             </MenuBar>
+            <AnchorPane prefHeight="365.0" prefWidth="594.0">
+               <children>
+                  <Circle layoutX="168.0" layoutY="186.0" opacity="0.12" radius="143.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.5190476190476191" startY="0.2523809523809524">
+                           <stops>
+                              <Stop color="#d72f2f" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Circle>
+                  <Text layoutX="25.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enterprise Rev" wrappingWidth="463.13671875">
+                     <font>
+                        <Font name="System Bold" size="64.0" />
+                     </font>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="0.5190476190476191" startY="0.2523809523809524">
+                           <stops>
+                              <Stop color="#d72f2f" />
+                              <Stop color="#0679f5" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Text>
+                  <Circle fill="#25ff1f" layoutX="442.0" layoutY="181.0" opacity="0.15" radius="145.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse layoutX="298.0" layoutY="266.0" opacity="0.28" radiusX="296.0" radiusY="80.0" stroke="BLACK" strokeType="INSIDE">
+                     <fill>
+                        <LinearGradient endX="0.5523809523809524" endY="0.5333333333333333" startX="0.5190476190476191" startY="1.0">
+                           <stops>
+                              <Stop color="#fff41f" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Ellipse>
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
    </content>

@@ -10,9 +10,9 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="636.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.SellerListController">
    <children>
-      <Label text="Seller Registration">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="39.0" prefWidth="636.0" text="Seller Registration" textAlignment="CENTER">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="System Bold" size="23.0" />
          </font>
          <padding>
             <Insets left="5.0" top="5.0" />
@@ -20,7 +20,10 @@
       </Label>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
         <items>
-          <Button fx:id="btNew" mnemonicParsing="false" onAction="#onBtNewAction" prefHeight="25.0" prefWidth="58.0" text="New" />
+          <Button fx:id="btNew" mnemonicParsing="false" onAction="#onBtNewAction" prefHeight="28.0" prefWidth="112.0" text="New">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font></Button>
         </items>
       </ToolBar>
       <TableView fx:id="tableViewSeller" prefHeight="200.0" prefWidth="200.0">
