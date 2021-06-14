@@ -1,7 +1,8 @@
-# Workshop-javafx-jdbc
-Project using JavaFX & JDBC.
-# Demonstration
-https://www.youtube.com/watch?v=xz0Uf6FJ4EA
+# SISTEMA DE CADASTRO E CONSULTA DE FUNCIONARIOS
+<h2>Project using JavaFX & JDBC</h2>
+<h2> Demonstration </h2>
+<h2>https://www.youtube.com/watch?v=xz0Uf6FJ4EA
+  </h2>
 
 # PROJECT
 ![img1](https://user-images.githubusercontent.com/84048306/120104113-4f1c3280-c129-11eb-8751-c2ad6d0d627e.png)
